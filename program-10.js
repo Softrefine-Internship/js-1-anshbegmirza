@@ -6,23 +6,26 @@
 
 // Expected Output: [4, 5, 8, 10, 12, 13]
 
+'use strict';
+
 
 const sumArray = function (arr1, arr2) {
   let arr3 = [];
-  for (let i = 0; i < arr2.length; i++) {
-    while (arr1[i] != 0 || arr2[i] != 0) {
-      arr3.push(arr1[i] + arr2[i]);
-    }
+  let maxLength = 0;
+  if (arr1.length > arr2.length) {
+    maxLength = arr1.length;
+  } else {
+    maxLength = arr2.length;
+  }
+
+  let result = [];
+  for (let i = 0; i < maxLength; i++) {
+    let value1 = arr1[i] || 0;
+    let value2 = arr2[i] || 0;
+    arr3.push(value1 + value2)
   }
   console.log(arr3);
-
 }
-sumArray([1, 0, 2, 3, 4], [3, 5, 6, 7, 8, 13]);
+// sumArray([1, 0, 2, 3, 4], [3, 5, 6, 7, 8, 13]);
 
-
-// if (arr1[i] != 0 || arr2[i] != 0) {
-//   arr3.push(arr1[i] + arr2[i]);
-// }
-// else {
-//   arr3.push(arr2[i]);
-// }
+sumArray([1, 2, 5, 3, 6, 10], [6, 9, 5, 7, 4, 2, 3, 51,]);

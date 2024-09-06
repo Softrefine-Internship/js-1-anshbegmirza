@@ -1,6 +1,6 @@
 // Write a JavaScript program to clone an array.
-
-const arr1 = [];
+'use strict';
+const arr1 = ['a', 's', 1, 2, 3, 'v', 's'];
 const arr2 = [];
 
 const cloneArray = function (arr1, arr2) {
@@ -10,6 +10,6 @@ const cloneArray = function (arr1, arr2) {
   console.log(arr2);
 }
 
-cloneArray([2, 9, 7, 3, 4, 6, 7], []);
+cloneArray(arr1, arr2);
 
 

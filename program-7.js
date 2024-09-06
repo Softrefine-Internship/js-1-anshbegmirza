@@ -14,3 +14,11 @@
 //  { title: 'Java', author: 'James' },
 //  { title: 'Python', author: 'Guido' }
 // ]
+'use strict';
+const array = [
+  { title: "C++", author: "Bjarne" },
+  { title: "Java", author: "James" },
+  { title: "Python", author: "Guido" },
+  { title: "Java", author: "James" },
+];
+
