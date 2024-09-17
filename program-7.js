@@ -22,3 +22,14 @@ const array = [
   { title: "Java", author: "James" },
 ];
 
+
+//using filter method
+
+const uniqueElements = array.filter(
+  (obj, index) => {
+    return index === array.findIndex(o => obj.title === o.title);
+  }
+
+);
+
+console.log(uniqueElements);
