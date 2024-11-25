@@ -11,47 +11,15 @@
 const arr1 = [1, 2, 3];
 const arr2 = [100, 2, 1, 10];
 
-const bubbleSort = function (arr) {
-  let isSwapped;
-  do {
-    isSwapped = false;
-    for (let i = 0; i < arr.length - 1; i++) {
-      if (arr[i] > arr[i + 1]) {
-        let temp = arr[i];
-        arr[i] = arr[i + 1];
-        arr[i + 1] = temp;
-        isSwapped = true;
-      }
+
+const unionOfArrays = function (array1, array2) {
+  const length = array1.length > array2.length ? array1.length : array2.length;
+  for (let i = 0; i < length; i++) {
+    if (!array1.includes(array2[i])) {
+      array1.push(array2[i]);
     }
   }
-  while (isSwapped)
-  return arr;
-}
+  return array1;
+};
 
-
-const unionFunction = function (arr1, arr2) {
-  bubbleSort(arr1);
-  bubbleSort(arr2);
-  let arr3 = [];
-
-  for (let i = 0; i < arr1.length; i++) {
-    arr3.push(arr1[i]);
-  }
-
-  for (let i = 0; i < arr2.length; i++) {
-    let isInArray3 = false;
-
-    for (let j = 0; j < arr3.length; j++) {
-      if (arr2[i] === arr3[j]) {
-        isInArray3 = true;
-        break;
-      }
-    }
-    if (!isInArray3) {
-      arr3.push(arr2[i]);
-    }
-  }
-  return arr3;
-}
-
-console.log(unionFunction(arr1, arr2));
+console.log(unionOfArrays(arr1, arr2));

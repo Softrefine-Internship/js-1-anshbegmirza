@@ -29,6 +29,34 @@ const ip2 = [
   { title: "C++", author: "James" },
 ];
 
+//without using unique
+
+const removeDuplicates = function (array) {
+  let result = [];
+
+  for (let i = 0; i < array.length; i++) {
+    let j;
+
+    for (j = 0; j < result.length; j++) {
+      if (array[i].title === result[j].title) {
+        break; // exit loop on duplicate
+      }
+    }
+    if (j === result.length) {
+      result.push(array[i]);
+    }
+  }
+  return result;
+}
+
+console.log(removeDuplicates(array));
+
+
+
+
+
+// Using unique
+/*
 const removeDuplicates = function (array) {
   let result = [];
   for (let i = 0; i < array.length; i++) {

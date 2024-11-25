@@ -6,19 +6,18 @@
 const inputArray = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
 
 const bubbleSort = function (arr) {
-  let isSwapped;
-  do {
-    isSwapped = false;
-    for (let i = 0; i < arr.length - 1; i++) {
-      if (arr[i] > arr[i + 1]) {
-        let temp = arr[i];
-        arr[i] = arr[i + 1];
-        arr[i + 1] = temp;
-        isSwapped = true;
+  const n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+
+    for (let j = 0; j < n - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
       }
     }
   }
-  while (isSwapped)
   return arr;
-}
-console.log(bubbleSort(inputArray));
+};
+
+console.log(bubbleSort(inputArray));  
